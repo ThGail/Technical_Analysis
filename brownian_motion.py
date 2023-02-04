@@ -19,6 +19,5 @@ def create_brownian_motion(maturity = 1, steps = 255, no_realisations = 100):
 
 
 def underlying_asset(S0, mu, sigma, t, Wt):
-  """ Rend les realisations de St une fois donne le tmps et Wt
-  avec la formule St = S0 * exp( (mu-sigma*sigma/2.0)*t + sigma*Wt)  """ 
+
   return S0 * np.exp( (mu-sigma**2.0/2.0)*t+ sigma*Wt)
