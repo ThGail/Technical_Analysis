@@ -1,11 +1,3 @@
-def rolling_mean(df, column, rolling_range, save = False):
-    
-    if save :
-        df['Roll_m ' + str(column) + ' ' + str(rolling_range)] = df[str(column)].rolling(rolling_range).mean()
-    
-    return df[str(column)].rolling(rolling_range).mean()
-
-
 def typical_price(df, save = False):
     
     if save :
@@ -25,6 +17,7 @@ def median_price(df, save = False):
 def weight_close(df, save = False):
     
     if save :
+        print('hello')
         df['Weight Close'] = (df['Close']*2 + df['High'] + df['Low'])/4
     
     return (df['Close']*2 + df['High'] + df['Low'])/4

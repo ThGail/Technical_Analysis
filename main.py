@@ -6,6 +6,8 @@ import pandas as pd
 from brownian_motion import create_brownian_motion
 from brownian_motion import underlying_asset
 from technical_analysis import *
+from graph import *
+from mean_price_indicators import *
 
 n = 1000
 
@@ -34,6 +36,17 @@ history_tte = tte.history(start='2021-12-21', end='2023-01-04')
 
 df_history_tte = pd.DataFrame(history_tte)
 
-plt.plot(rolling_mean(df_history_tte['Open'], 50))
+
+
+#graph_candle(df_history_tte)
+
+print(df_history_tte)
+
 plt.plot(df_history_tte['Open'])
+plt.plot(typical_price(df_history_tte, save = True))
+plt.plot(median_price(df_history_tte, save = True))
+plt.plot(weight_close(df_history_tte, save = True))
+plt.plot(total_price(df_history_tte, save = True))
+
 plt.show()
+
